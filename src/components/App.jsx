@@ -20,7 +20,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      {/* <div>
+      <div>
         <Profile
           username={user.username }
           tag={user.tag}
@@ -32,10 +32,10 @@ export const App = () => {
       <div>
         <Statistics title="Upload stats" stats={data} />
       </div>
-         */}
-      {/* <div>
+        
+      <div>
         <FriendList friends={friends} />
-      </div> */}
+      </div>
       <div>
         <TransactionHistory items={transactions} />
       </div>
