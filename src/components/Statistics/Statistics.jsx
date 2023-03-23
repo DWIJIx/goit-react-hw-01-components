@@ -2,15 +2,16 @@ import PropTypes from 'prop-types'
 import { Card, Title, StatsList, StatsItem} from './Statistics.styled'
 
 export const Statistics = ({ title, stats }) => {
+    // console.log(title)
     return (
-        <Card class="statistics">
-            <Title class="title">{title}</Title>
+        <Card>
+            {title && <Title>{title}</Title>}
 
-            <StatsList class="stat-list">
+            <StatsList>
             {stats.map(stat => (
-                <StatsItem class="item" key={stat.id}>
-                    <span class="label">{stat.label}</span>
-                    <span class="percentage">{stat.percentage}%</span>
+                <StatsItem key={stat.id}>
+                    <span>{stat.label}</span>
+                    <span>{stat.percentage}%</span>
                 </StatsItem>
             ))}
             
@@ -20,7 +21,7 @@ export const Statistics = ({ title, stats }) => {
 }
 
 Statistics.propTypes = {
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     
     stats: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string.isRequired,
